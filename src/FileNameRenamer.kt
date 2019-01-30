@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 
 //The number of characters to extract from the file name.
- var PLAYLIST_NUMBER_SIZE  = 4
+ var NUMBER_OF_CHARACTERS_TO_EXTRACT  = 4
 
 fun main(args: Array<String>): Unit {
 
@@ -53,7 +53,7 @@ fun renameFiles(file: File, location: String) {
             try{
                 val filename = file.name
                 val endExtractionPoint: Int = filename.indexOf('.')
-                val startExtractionPoint: Int = endExtractionPoint -  PLAYLIST_NUMBER_SIZE
+                val startExtractionPoint: Int = endExtractionPoint -   NUMBER_OF_CHARACTERS_TO_EXTRACT
                 val videoNumber: String = filename.substring(startExtractionPoint, endExtractionPoint)
 
                 val newFileName = "$location/$videoNumber-$filename"
